@@ -3,7 +3,7 @@
  -[x]on mouse over, expand 
  -and show screen cap of "it's dangerous to go alone, take this" scene
   with github icon replacing sword.
- -Link to repo for page with that button. poiner cursor
+ -[x] Link to repo for page with that button. poiner cursor
  -Schmiel button links to SCHMORTAL
  -[x] square schmiel button corners
  -[x] rounded old man sprite corners

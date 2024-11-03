@@ -23,10 +23,11 @@ export const MapComponent = () => {
     },[])
   
     const mapSX = {
-      height: '100vh', 
+      height: '360px', 
       width: '100%', 
       maxHeight: '360px', 
-      maxWidth: '640px'
+      // maxWidth: '640px'
+      maxWidth: '516px'
     }
   
     return <Box className='mapDiv' ref={mapDiv} sx={mapSX} />

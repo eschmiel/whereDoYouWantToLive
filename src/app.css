@@ -1,1 +1,9 @@
 @import url('https://fonts.cdnfonts.com/css/impact');
+body {
+    margin: 0px;
+    /* color: #ececec */
+}
+
+.esri-attribution {
+    visibility: hidden;
+}

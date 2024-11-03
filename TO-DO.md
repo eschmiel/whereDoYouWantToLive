@@ -1,27 +1,28 @@
- Create SVG of zelda old man sprite
- or make picture button?
- on mouse over, expand and show screen cap of "it's dangerous to go alone, take this" scene
+~~ Create SVG of zelda old man sprite~~
+ -[x]or make picture button?
+ -[x]on mouse over, expand 
+ -and show screen cap of "it's dangerous to go alone, take this" scene
   with github icon replacing sword.
- Link to repo for page with that button. poiner cursor
- Schmiel button links to SCHMORTAL
- square schmiel button corners
- rounded old man sprite corners
+ -Link to repo for page with that button. poiner cursor
+ -Schmiel button links to SCHMORTAL
+ -[x] square schmiel button corners
+ -[x] rounded old man sprite corners
 
  - Click on map, record gps coordinates in state for where you want to live
- - Confirm selection
+ -[x] Confirm selection
  fade to new question title. Show pin for where you want to live
- - previous question button
- - Select none button
- -- "I don't want to live anywhere"
- -- "I don't live anywhere"
- -- "I don't have a home"
+ -[x] previous question button
+ -[x] Select none button
+ --[x] "I don't want to live anywhere"
+ --[x] "I don't live anywhere"
+ --[x] "I don't have a home"
 
- 3  questions
- -- where do you want to live?
- -- where do you live?
- -- Where is home?
+ -[x] 3 questions
+ --[x] where do you want to live?
+ --[x] where do you live?
+ --[x] Where is home?
 
- Are you sure? button after all 3 questions answered
+ [x] Are you sure? button after all 3 questions answered
 
  Learn about people button
 

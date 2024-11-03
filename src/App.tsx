@@ -2,33 +2,29 @@
 //https://geo-jobe.com/mapthis/creating-custom-arcgis-map-widgets-as-react-components-part-2/
 //https://dev.to/imkarthikeyan/integrating-esri-maps-into-your-react-app-2e1h
 import './app.css'
-
-import { Box, Button, Container, IconButton, Stack, ThemeProvider, Typography } from '@mui/material'
-import { theme } from './muiTheme'
-
 import "@arcgis/core/assets/esri/themes/dark/main.css"
-import { MapComponent } from './components/Map'
+
+import { Box, Container, Stack, ThemeProvider } from '@mui/material'
+import { mainBGColor, theme } from './muiTheme'
+
+import { Footer } from './components/Footer'
+import { Content } from './components/Content'
 
 
 function App() {
+
   return (
     <ThemeProvider theme={theme}>
-      <Container>
-        <Typography variant="h4" align="center" sx={{marginTop:"100px"}}>
-          Where do you want to live?
-        </Typography>
-        <Box display="flex" justifyContent='center' marginTop={'65px'}>
-          <MapComponent />
-        </Box>
-
-        <Stack position='absolute' sx={{bottom:'0px'}} justifyContent='space-between' direction="row">
-          <Button variant="schmiel">SCHMIEL</Button>
-          <IconButton>
-            
-          </IconButton>
-        </Stack>
-      </Container>
+      <Box bgcolor={mainBGColor} sx={{height:'100vh', width: '100%', margin:'0px', overflow: 'hidden', ['@media (max-height: 520px)']: {overflow:'visible'}}}>
+        <Container sx={{height: '100%'}} >
+          <Stack justifyContent="space-between" sx={{height: "100%", margin: '0px'}}>
+            <Content />
+            <Footer />
+          </Stack>
+        </Container>
+      </Box>
     </ThemeProvider>
+    
   )
 }
 

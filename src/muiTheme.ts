@@ -6,10 +6,10 @@ const defaultTheme = createTheme()
 ///// configuration /////
 
 
-const mainBGColor = "#fefefe"
+export const mainBGColor = "#fefefe"
 const primary = "#ba1aeb"
 const primaryDark = '#8b02b5'
-const drawerBGColor = "#f2f1ef"
+const drawerBGColor = "#8a8a8a"
 const tertiaryColor = "#ffd700"
 const white = '#FFFFFF'
 
@@ -22,7 +22,8 @@ const drawerWidth = 240
 export const theme = createTheme({
     topMarginToClearAppBar: "130px",
     colors: {
-        mainBGColor
+        mainBGColor,
+        drawerBGColor
     },
     components: {
         MuiDrawer: {

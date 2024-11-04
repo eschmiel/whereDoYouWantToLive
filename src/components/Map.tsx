@@ -3,7 +3,7 @@ import Map from "@arcgis/core/Map.js";
 import MapView from "@arcgis/core/views/MapView";
 import { Box } from "@mui/material";
 
-export const MapComponent = () => {
+export const MapComponent = ({clickHandler = (e) => {}}) => {
     const mapDiv = useRef(null)
     useEffect(()=> {
       if(mapDiv.current) {
@@ -14,9 +14,17 @@ export const MapComponent = () => {
         const view = new MapView({
           container: mapDiv.current,
           map: webMap,
-          center: [-117.1490,32.7353],
-          scale: 10000000
+          center: [0,0],
+          // scale: 10000000
+          zoom:0,
+          popupEnabled: false,
         })
+
+        const clickHandlerWithView = (event) => {
+          clickHandler(view, event)
+        }
+
+        view.on("click", clickHandlerWithView)
   
         return () => view && view.destroy()
       }

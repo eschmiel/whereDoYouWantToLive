@@ -8,9 +8,12 @@
  -[x] square schmiel button corners
  -[x] rounded old man sprite corners
 
- - Click on map, record gps coordinates in state for where you want to live
+ -[x] Click on map, record gps coordinates in state for where you want to live
  -[x] Confirm selection
  fade to new question title. Show pin for where you want to live
+ -- flag - where do you want to live
+ -- house - where you do live
+ -- heart - home
  -[x] previous question button
  -[x] Select none button
  --[x] "I don't want to live anywhere"

@@ -66,6 +66,19 @@ export const theme = createTheme({
                                 borderRadius: 0,
                                 "&:hover": {cursor: "pointer", backgroundColor: primaryDark}
                             }
+                        },
+                        {
+                            props: { variant: 'appBar'},
+                            style: {
+                                alignItems: 'center', 
+                                justifyContent: "center", 
+                                display:"flex", 
+                                width: "150px", 
+                                color: tertiaryColor,
+                                fontWeight: 'bold',
+                                fontSize: '1.5rem',
+                                "&:hover": {cursor: "pointer", backgroundColor: primaryDark}
+                            }
                         }
                     ]
                 }

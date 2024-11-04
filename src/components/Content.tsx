@@ -5,6 +5,7 @@ import { useState } from 'react'
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import CheckBoxOutlinedIcon from '@mui/icons-material/CheckBoxOutlined';
+import MapView from '@arcgis/core/views/MapView';
 
 export const Content = () => {
     const {colors} = useTheme()
@@ -12,6 +13,9 @@ export const Content = () => {
     const [noWantToLive, setNoWantToLive] = useState(false)
     const [noCurrentLive, setNoCurrentLive] = useState(false)
     const [noHome, setNoHome] = useState(false)
+    const [wantToLive, setWantToLive] = useState<number[]>()
+    const [currentLive, setCurrentLive] = useState<number[]>()
+    const [home, setHome] = useState<number[]>()
     
 
     const questions = [
@@ -41,13 +45,44 @@ export const Content = () => {
         if(questionNum == 2) return setNoHome(!noHome)
     }
 
+    const mapClickHandler = (view: MapView, event) => {
+        let lat = Math.round(event.mapPoint.latitude * 1000) / 1000;
+        let lon = Math.round(event.mapPoint.longitude * 1000) / 1000;
+
+        if(questionNum == 0) {
+            setWantToLive([lat,lon])
+            view.openPopup({
+                title: "Want to Live",
+                location: event.mapPoint, // Set the location of the popup to the clicked location
+                // content: "This is a point of interest"  // content displayed in the popup
+            })
+        }
+        if(questionNum == 1) {
+            setCurrentLive([lat,lon])
+            view.openPopup({
+                title: "Reverse geocode: [" + lon + ", " + lat + "]",
+                location: event.mapPoint, // Set the location of the popup to the clicked location
+                content: "This is a point of interest"  // content displayed in the popup
+                
+            })
+        }
+        if(questionNum == 2) {
+            setHome([lat,lon])
+            view.openPopup({
+                title: "Reverse geocode: [" + lon + ", " + lat + "]",
+                location: event.mapPoint, // Set the location of the popup to the clicked location
+                content: "This is a point of interest"  // content displayed in the popup
+            })
+        }
+    }
+
     return (
         <Box sx={{paddingTop:"40px", ['@media (max-height: 620px)']: {padding: "20px"}}}>
             <Typography variant="h4" align="center">
                 {questions[questionNum]}
             </Typography>
             <Box display="flex" justifyContent='center' marginTop={'40px'} sx={{['@media (max-height: 620px)']: {marginTop: "20px"}}}>
-                <MapComponent />
+                <MapComponent clickHandler={mapClickHandler}/>
             </Box>
             <Box display="flex" justifyContent='center'>
                 <FormGroup>
